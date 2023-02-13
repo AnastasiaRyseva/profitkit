@@ -1,0 +1,203 @@
+.container {
+  max-width: 139rem;
+  margin: 0 auto;
+  overflow: visible;
+  padding: 0 10rem;
+  &--tabs {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    padding: 8rem 0 4rem;
+    .tab {
+      @include font-descr(2.4rem, 400, 3.4rem, $tabs-color);
+      background-image: linear-gradient(
+        to right,
+        $tabs-color 50%,
+        transparent 50%
+      );
+      background-position: 0 1.3em;
+      background-repeat: repeat-x;
+      background-size: 3px 2px;
+      cursor: pointer;
+      &-active {
+        @include font-descr(3.4rem, 700, 4rem, $active-tab-color);
+        background-image: none;
+        text-transform: uppercase;
+        font-family: "RubikBold", sans-serif;
+      }
+    }
+  }
+  &--content {
+    position: relative;
+    .content {
+      overflow: hidden;
+      display: none;
+      opacity: 0;
+      transform: scaleY(0.8);
+      transform-origin: center top;
+      -webkit-animation: showContent 0.6s forwards;
+      animation: showContent 0.6s forwards;
+      &-active {
+        opacity: 1;
+        display: block;
+      }
+      &--bought {
+        @include font-descr(2.4rem, 400, 3.4rem, rgba(0, 0, 0, 1));
+        text-align: center;
+      }
+      &--interesting {
+        @include font-descr(2.4rem, 400, 3.4rem, rgba(0, 0, 0, 1));
+        text-align: center;
+      }
+      .product-swiper {
+        .products {
+          .product {
+            max-height: 100%;
+            text-align: center;
+            border: 1px solid rgba(236, 240, 244, 1);
+            padding-bottom: 2.5rem;
+            border-radius: 0.5rem;
+            position: relative;
+            z-index: 1;
+            max-width: 33.4rem;
+            &--like,
+            &--compare {
+              position: absolute;
+              z-index: 99;
+              width: 3.4rem;
+              height: 3.4rem;
+              border-radius: 50%;
+              background-color: #fff;
+              display: flex;
+              text-align: center;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+            }
+            &--like {
+              top: 1rem;
+              right: 2rem;
+              .like:hover {
+                stroke: red;
+                fill: red;
+              }
+            }
+            &--compare {
+              top: 5rem;
+              right: 2rem;
+              &:hover {
+                background-color: rgba(241, 210, 100, 1);
+              }
+            }
+            &--marker {
+              position: absolute;
+              z-index: 99;
+              top: 1rem;
+              left: 2rem;
+              width: 50px;
+              height: 50px;
+            }
+            &--title {
+              @include font-descr(1.4rem, 400, 2rem, rgba(0, 0, 0, 1));
+              min-height: 4rem;
+              padding: 0 3.2rem;
+              @media (max-width: 1300px) {
+                padding: 0;
+              }
+              @media (max-width: 410px) {
+                font-size: 1.6rem;
+                line-height: 2.2rem;
+                min-height: 1rem;
+                margin-top: 1rem;
+              }
+              @media (max-width: 300px) {
+                font-size: 1.3rem;
+              }
+            }
+            &--prices {
+              display: flex;
+              justify-content: center;
+              gap: 1rem;
+              @media (max-width: 410px) {
+                margin-top: 0.5rem;
+                margin-bottom: 2rem;
+                align-items: baseline;
+              }
+            }
+            &--price {
+              @include font-descr(2rem, 700, 2.2rem, rgba(0, 0, 0, 1));
+              font-family: "RubikBold", sans-serif;
+              @media (max-width: 410px) {
+                margin-top: 1.5rem;
+              }
+            }
+            &--oldPrice {
+              @include font-descr(1.4rem, 400, 2.2rem, rgba(141, 146, 149, 1));
+              text-decoration: line-through;
+            }
+            &--order {
+              display: flex;
+              justify-content: center;
+              gap: 1rem;
+              margin-top: 1rem;
+              padding: 0 2.5rem;
+              @media (max-width: 300px) {
+                padding: 0.7rem;
+              }
+            }
+            &--count {
+              display: flex;
+              gap: 2rem;
+              @include font-descr(1.8rem, 400, 2.1rem, rgba(76, 78, 80, 1));
+              border: 1px solid rgba(236, 240, 244, 1);
+              padding: 1.4rem;
+              border-radius: 0.5rem;
+              align-items: center;
+            }
+            .count-increment {
+              cursor: pointer;
+              font-size: 2.2rem;
+            }
+            .count-decrement {
+              cursor: pointer;
+            }
+            &--btn {
+              @include font-descr(1.4rem, 800, 1.6rem, rgba(0, 0, 0, 1));
+              width: 17.4rem;
+              max-width: 100%;
+              background-color: $background-btn;
+              box-shadow: 0 0 40px 40px $background-btn inset,
+                0 0 0 0 $background-btn;
+              transition: all 0.3s ease-in-out;
+              border-radius: 0.5rem;
+              cursor: pointer;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 1.3rem;
+              &:hover {
+                box-shadow: 15px 2px 15px 0 $background-btn inset,
+                  15px 2px 15px 0 $background-btn;
+              }
+              @media (max-width: 300px) {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes showContent {
+  0% {
+    transform: scaleY(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+

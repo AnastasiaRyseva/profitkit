@@ -1,0 +1,6 @@
+@mixin font-descr($f-size, $f-weight, $f-height, $f-color) {
+  font-size: $f-size;
+  font-weight: $f-weight;
+  line-height: $f-height;
+  color: $f-color;
+}

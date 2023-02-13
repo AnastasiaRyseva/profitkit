@@ -1,0 +1,31 @@
+.button {
+    border: 1px solid rgba(236, 240, 244, 1);
+    border-radius: 3px;
+    padding: 5px 10px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 99999;
+    color: black;
+    top: 50%;
+  }
+  .button-prev {
+    left: -8.5rem;
+  }
+  .button-next {
+    right: -8.5rem;
+  }
+  /*слайдер внутри карточки*/
+  .product--img-slider {
+    position: relative;
+    overflow: hidden;
+  }
+  .swiper-pagination-bullet {
+    height: 0.3rem;
+    width: 2.2rem;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: rgba(241, 210, 100, 1);
+  }

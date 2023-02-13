@@ -1,0 +1,63 @@
+@media (max-width: 1160px) {
+  .container {
+    &--tabs {
+      .tab {
+        font-size: 2rem;
+        background-position: 0 3.2rem;
+      }
+    }
+  }
+}
+@media (max-width: 910px) {
+  .container {
+    padding: 0 2rem;
+    &--tabs {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      .tab {
+        background-position: 0 1.5em;
+      }
+    }
+    .button {
+      display: none;
+    }
+  }
+}
+@media (max-width: 560px) {
+    .product-swiper {
+      width: 80%;
+    }
+}
+@media (max-width: 410px) {
+  .container {
+    .tab {
+      font-size: 1.4rem;
+      background-position: 0 1.7em;
+    }
+    .tab-active {
+      font-size: 1.8rem;
+      line-height: 2.6rem;
+    }
+    .product-swiper {
+        width: 90%;
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .product {
+    &--count {
+      font-size: 1rem;
+    }
+    .count-increment {
+      font-size: 1rem;
+    }
+    &--btn {
+      font-size: 1rem;
+    }
+  }
+  .product-swiper {
+    width: 97%;
+  }
+}
