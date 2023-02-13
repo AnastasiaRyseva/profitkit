@@ -3,5 +3,7 @@
 С помощью команды **npm run start** запустите сервер для разработки
 
 **npm run build-dev** сборка без оптимизации
+
 **npm run build-prod** сборка с оптимизацией
+
 **npm run clear** очистить dist
